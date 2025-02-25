@@ -1,0 +1,18 @@
+﻿@page
+@model Assignment2.Pages.PrivacyModel
+
+@if (Model.Person is null || string.IsNullOrWhiteSpace(Model.Person.Name))
+{
+    <h1>No birthdays today :(</h1>
+}
+else if (Model.Person.Age <= 0)
+{
+    <h1>@Model.Person.Name is @Model.Person.Age years old? Are you sure?</h1>
+}
+else
+{
+    @for (int i = 1; i <= Model.Person.Age; i++)
+    {
+        <p>Happy @i birthday @Model.Person.Name!</p>
+    }
+}
